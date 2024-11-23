@@ -4,11 +4,13 @@ import numpy as np
 import sklearn
 from sklearn.preprocessing import StandardScaler
 import time
+import tensorflow
+from tensorflow import load_model
 
 # Load the trained model
-model_path = 'model.pkl'
-with open(model_path, 'rb') as file:
-    model = pickle.load(file)
+model_path = 'heart.h5'
+model = load_model(model_path)
+
 
 app = Flask(__name__)
 
